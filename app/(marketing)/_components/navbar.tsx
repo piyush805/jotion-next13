@@ -7,7 +7,6 @@ import { useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
-
 import { Logo } from "./logo";
 import Link from "next/link";
 
@@ -22,7 +21,6 @@ export const Navbar = () => {
         scrolled && "border-b shadow-sm"
       )}
     >
-      {" "}
       <Logo />
       <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
         {isLoading && <Spinner />}
