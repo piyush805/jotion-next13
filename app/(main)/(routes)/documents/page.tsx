@@ -29,7 +29,7 @@ function DocumentPage() {
       <h2 className="text-lg font-medium">
         Welcome to {user?.firstName}&apos;s Jotion
       </h2>
-      <Button onClick={onCreate}>
+      <Button onClick={onCreate} className="flex gap-x-2">
         <PlusCircle />
         Create a note
       </Button>
