@@ -1,13 +1,17 @@
 import { create } from "zustand";
 
 type CoverImageStore = {
+  url?: string;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  onReplace: (url: string) => void;
 };
 
-export const useCoverImahge = create<CoverImageStore>((set) => ({
+export const useCoverImage = create<CoverImageStore>((set) => ({
+  url: undefined,
   isOpen: false,
-  onOpen: () => set({ isOpen: true }),
-  onClose: () => set({ isOpen: false }),
+  onOpen: () => set({ isOpen: true, url: undefined }), // url explicitly undefined in order to not replace url due to existing un-set state
+  onClose: () => set({ isOpen: false, url: undefined }),
+  onReplace: (url: string) => set({ isOpen: true, url }),
 }));
